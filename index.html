@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Октан — ремонт автотехники в Москве. Диагноз до рубля</title>
+<meta name="description" content="Технический центр «Октан» в Москве: компьютерная диагностика, ремонт двигателя и АКПП, ходовая, электрика, кузов и покраска, ТО, выездная помощь. Смета до начала работ, гарантия 2 года.">
+<meta name="theme-color" content="#0A0B0D">
+<meta property="og:title" content="Октан — ремонт автотехники в Москве">
+<meta property="og:description" content="Диагностика с протоколом, смета до рубля, гарантия 2 года.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23FF4D0F' stroke-width='3'/%3E%3Cpath d='M16 5v22M5 16h22' stroke='%23FF4D0F' stroke-width='3'/%3E%3C/svg%3E">
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">К основному содержимому</a>
+
+<!-- ПРЕЛОАДЕР -->
+<div class="preloader">
+  <div class="preloader__mark">
+    <div class="preloader__logo"><span>О</span><span>К</span><span>Т</span><span>А</span><span>Н</span></div>
+    <div class="preloader__sub">Технический центр · Москва</div>
+  </div>
+  <div class="preloader__bottom">
+    <div class="preloader__count"><span data-count>000</span><sup>%</sup></div>
+    <div class="preloader__bar"><i></i></div>
+    <div class="preloader__status">Калибровка стенда</div>
+  </div>
+</div>
+
+<div data-chrome="header"></div>
+
+<noscript>
+  <nav style="padding:90px 24px 0;">
+    <a href="services.html">Услуги</a> · <a href="about.html">О сервисе</a> ·
+    <a href="works.html">Работы</a> · <a href="contacts.html">Контакты</a>
+  </nav>
+</noscript>
+
+<main id="main">
+
+  <!-- ================================================== HERO -->
+  <section class="hero">
+    <div class="hero__canvas" aria-hidden="true"></div>
+    <!-- Фолбэк виден по умолчанию: если ES-модуль/WebGL не поднялись, hero не пустеет.
+         hero3d.js прячет его только после успешной инициализации сцены. -->
+    <div class="hero__fallback" aria-hidden="true"><i></i></div>
+
+    <div class="hero__inner shell">
+      <div class="hero__top">
+        <p class="mono" data-hero-fade>Технический центр «Октан» · Москва, Автозаводская</p>
+        <p class="hero__claim" data-hero-fade>
+          Мы не гадаем по симптомам. Каждый ремонт начинается со стенда и заканчивается
+          протоколом, который вы забираете вместе с машиной.
+        </p>
+      </div>
+
+      <h1 class="hero__title display">
+        <span class="line"><span>Техника</span></span>
+        <span class="line"><span class="thin">не любит</span></span>
+        <span class="line"><span>догадок</span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <div class="hero__facts">
+          <div class="hero__fact" data-hero-fade>
+            <strong>2 года</strong><span class="mono">гарантия на работы</span>
+          </div>
+          <div class="hero__fact" data-hero-fade>
+            <strong>от 1 900 ₽</strong><span class="mono">диагностика по 9 системам</span>
+          </div>
+          <div class="hero__fact" data-hero-fade>
+            <strong>0 ₽</strong><span class="mono">за смету и консультацию</span>
+          </div>
+        </div>
+        <div class="hero__scroll mono" data-hero-fade>
+          <i aria-hidden="true">↓</i> Листайте — диск разберётся
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== MARQUEE -->
+  <div class="marquee" data-speed="30" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Диагностика</span><span>Двигатель</span><span>АКПП</span><span>Ходовая</span>
+      <span>Электрика</span><span>Кузов и покраска</span><span>ТО</span><span>Выездная помощь</span>
+    </div>
+  </div>
+
+  <!-- ================================================== ПОЧЕМУ МЫ -->
+  <section class="section" aria-labelledby="why-h">
+    <div class="shell">
+      <div class="sect-head">
+        <div>
+          <p class="mono" style="margin-bottom:1rem">01 — Почему «Октан»</p>
+          <h2 class="sect-head__title display" id="why-h" data-reveal="lines">Цифры вместо обещаний</h2>
+        </div>
+        <div class="sect-head__meta">
+          <span class="mono">С 2020 года</span>
+          <p>Мы держим один пост на одного мастера и не берём больше машин, чем можем
+             честно отремонтировать за смену. Отсюда сроки, которые не срываются.</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stats__item">
+          <div class="stats__num"><span data-counter="4200">0</span><sup>+</sup></div>
+          <p class="stats__label mono">Ремонтов выполнено</p>
+          <p class="stats__desc">От замены сайлентблоков до капремонта V6 с расточкой блока.</p>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num"><span data-counter="97.4" data-decimals="1">0</span><sup>%</sup></div>
+          <p class="stats__label mono">Совпадение сметы и счёта</p>
+          <p class="stats__desc">Если нашли лишнее — согласуем отдельно. Молча не дописываем.</p>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num"><span data-counter="9">0</span></div>
+          <p class="stats__label mono">Постов в цехе</p>
+          <p class="stats__desc">Два подъёмника под кузовные работы, окрасочно-сушильная камера.</p>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num"><span data-counter="24">0</span><sup>ч</sup></div>
+          <p class="stats__label mono">Выездная бригада</p>
+          <p class="stats__desc">Запуск, подмена аккумулятора, диагностика на месте в пределах МКАД.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== УСЛУГИ (h-scroll) -->
+  <section class="section" data-hscroll aria-labelledby="svc-h" style="padding-bottom:0">
+    <div class="shell">
+      <div class="sect-head">
+        <div>
+          <p class="mono" style="margin-bottom:1rem">02 — Направления</p>
+          <h2 class="sect-head__title display" id="svc-h" data-reveal="lines">Что мы умеем делать руками</h2>
+        </div>
+        <div class="sect-head__meta">
+          <span class="mono">7 направлений</span>
+          <p>Цены — реальные ориентиры по нашему прайсу. Точная сумма появляется
+             после диагностики и до начала работ.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hscroll__viewport">
+      <div class="hscroll__track">
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx">
+            <span class="mono">01 / Диагностика</span>
+            <span class="mono">2–4 ч</span>
+          </div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <circle cx="50" cy="50" r="38"/><path d="M50 50 L74 34"/><circle cx="50" cy="50" r="5" fill="currentColor" stroke="none"/>
+              <path d="M50 12v8M88 50h-8M50 88v-8M12 50h8"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">Компьютерная диагностика</h3>
+            <p class="svc-card__text">Сканируем 9 блоков, снимаем живые параметры на ходу, проверяем компрессию и герметичность. На выходе — протокол с приоритетами.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 1 900 ₽<em>стоимость</em></div>
+              <span class="mono">Протокол PDF</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">02 / Двигатель</span><span class="mono">3–10 дней</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <rect x="22" y="38" width="56" height="40" rx="4"/><rect x="36" y="18" width="28" height="20" rx="3"/>
+              <path d="M22 58H8M78 58h14M50 18v-8"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">Ремонт двигателя</h3>
+            <p class="svc-card__text">Замена цепи и ГРМ, ремонт ГБЦ, капитальный ремонт с расточкой и подбором поршневой. Работаем с бензином, дизелем и турбо.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 24 000 ₽<em>стоимость</em></div>
+              <span class="mono">Гарантия 2 года</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">03 / Трансмиссия</span><span class="mono">2–7 дней</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <circle cx="38" cy="38" r="20"/><circle cx="66" cy="66" r="14"/>
+              <path d="M38 18v-8M18 38h-8M58 38h6M66 86v6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">АКПП, вариатор, робот</h3>
+            <p class="svc-card__text">Аппаратная замена масла, ремонт гидроблока, замена соленоидов и фрикционов. Адаптация после ремонта — обязательно.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 8 500 ₽<em>стоимость</em></div>
+              <span class="mono">Стенд адаптации</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">04 / Шасси</span><span class="mono">1–2 дня</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M30 20v34a20 20 0 0 0 40 0V20"/><circle cx="50" cy="76" r="10"/><path d="M30 20h40M22 34h16M62 34h16"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">Ходовая часть</h3>
+            <p class="svc-card__text">Амортизаторы, рычаги, сайлентблоки, ступицы, тормозная система. Развал-схождение на 3D-стенде после каждой замены геометрии.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 3 400 ₽<em>стоимость</em></div>
+              <span class="mono">3D-развал</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">05 / Электрика</span><span class="mono">1–3 дня</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M56 10 30 54h18l-6 36 30-46H54z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">Электрика и электроника</h3>
+            <p class="svc-card__text">Поиск утечек тока, ремонт проводки и блоков, восстановление после «прикуривания». Прошивки и кодирование по VIN.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 2 600 ₽<em>стоимость</em></div>
+              <span class="mono">Осциллограф</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">06 / Кузов</span><span class="mono">2–14 дней</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M14 62h72M20 62l10-24h40l10 24"/><circle cx="32" cy="70" r="8"/><circle cx="68" cy="70" r="8"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">Кузовной ремонт и покраска</h3>
+            <p class="svc-card__text">Правка геометрии на стапеле, ремонт вмятин без покраски, локальная и полная окраска с подбором по спектрофотометру.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 6 900 ₽<em>стоимость</em></div>
+              <span class="mono">Камера 7×5 м</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" data-cursor="Подробнее">
+          <div class="svc-card__idx"><span class="mono">07 / Сервис</span><span class="mono">2–5 ч</span></div>
+          <div class="svc-card__art" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M66 20a20 20 0 1 0 14 34L86 82l-8-6-24-30"/><circle cx="50" cy="50" r="4" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="svc-card__title">ТО и выездная помощь</h3>
+            <p class="svc-card__text">Регламентное ТО с сохранением гарантии дилера. Выезд по Москве: запуск, замена АКБ, диагностика на месте.</p>
+            <div class="svc-card__meta">
+              <div class="svc-card__price">от 4 200 ₽<em>стоимость</em></div>
+              <span class="mono">24/7 выезд</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="hscroll__hint">
+      <span class="mono">Прокрутка →</span>
+      <div class="bar"><i></i></div>
+      <a class="mono" href="services.html" data-label="Услуги" style="color:var(--accent)">Весь прайс ↗</a>
+    </div>
+  </section>
+
+  <div class="marquee marquee--alt" data-dir="right" data-speed="34" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Смета до работ</span><span>Гарантия 2 года</span><span>Оригинал или аналог — на выбор</span><span>Фотоотчёт каждый день</span>
+    </div>
+  </div>
+
+  <!-- ================================================== ПРОЦЕСС -->
+  <section class="section" aria-labelledby="proc-h">
+    <div class="shell">
+      <div class="sect-head">
+        <div>
+          <p class="mono" style="margin-bottom:1rem">03 — Как это устроено</p>
+          <h2 class="sect-head__title display" id="proc-h" data-reveal="lines">Пять шагов без сюрпризов</h2>
+        </div>
+        <div class="sect-head__meta">
+          <span class="mono">Средний цикл — 3 дня</span>
+          <p>Вы видите машину в работе каждый день: фото и короткий комментарий мастера приходят в мессенджер.</p>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process__sticky">
+          <div class="process__big" aria-hidden="true">01<br>05</div>
+        </div>
+
+        <div>
+          <article class="step" data-reveal="up">
+            <div class="step__num">01</div>
+            <div>
+              <h3 class="step__title">Заявка и разговор</h3>
+              <p class="step__text">Спрашиваем не «что сломалось», а как ведёт себя машина: когда, на какой скорости, при какой температуре. Половина диагноза ставится здесь.</p>
+              <p class="step__time mono">10 минут · бесплатно</p>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="up">
+            <div class="step__num">02</div>
+            <div>
+              <h3 class="step__title">Диагностика на стенде</h3>
+              <p class="step__text">Сканер, осциллограф, эндоскоп, замер компрессии, тест-драйв с логированием. Фиксируем всё, что нашли, включая то, что пока терпит.</p>
+              <p class="step__time mono">2–4 часа · от 1 900 ₽</p>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="up">
+            <div class="step__num">03</div>
+            <div>
+              <h3 class="step__title">Смета и приоритеты</h3>
+              <p class="step__text">Делим работы на три категории: «критично сейчас», «в течение месяца», «можно наблюдать». Вы решаете, что делаем в этот заезд.</p>
+              <p class="step__time mono">В тот же день · бесплатно</p>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="up">
+            <div class="step__num">04</div>
+            <div>
+              <h3 class="step__title">Ремонт с фотоотчётом</h3>
+              <p class="step__text">Каждый день — снимки узла до и после, старые детали сохраняем и показываем. Отклонение от сметы согласуем до, а не после.</p>
+              <p class="step__time mono">1–10 дней</p>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="up">
+            <div class="step__num">05</div>
+            <div>
+              <h3 class="step__title">Контрольный выезд и выдача</h3>
+              <p class="step__text">Повторный тест-драйв по тому же маршруту, контрольные замеры, мойка. Отдаём протокол, чек и гарантийный талон на 2 года.</p>
+              <p class="step__time mono">1 час · включено</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== ОТЗЫВЫ -->
+  <section class="section" aria-labelledby="rev-h" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="shell">
+      <div class="sect-head">
+        <div>
+          <p class="mono" style="margin-bottom:1rem">04 — Отзывы</p>
+          <h2 class="sect-head__title display" id="rev-h" data-reveal="lines">Говорят владельцы</h2>
+        </div>
+        <div class="sect-head__meta">
+          <span class="mono">Рейтинг 4.9 из 5</span>
+          <p>Собираем обратную связь после каждой выдачи — в том числе неудобную.</p>
+        </div>
+      </div>
+
+      <div class="reviews" data-reveal="stagger">
+        <figure class="review">
+          <blockquote class="review__quote">Три сервиса подряд говорили «меняй АКПП целиком, 380 тысяч». Здесь разобрали гидроблок, поменяли два соленоида и сделали адаптацию. Вышло 41 тысяча. Прошло восемь месяцев — коробка работает как новая.</blockquote>
+          <figcaption class="review__author">
+            <span class="review__ava" aria-hidden="true">ДК</span>
+            <span><span class="review__name">Дмитрий К.</span><br><span class="review__car">Volkswagen Tiguan · 2017</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="review__quote">Больше всего понравилось, что смета совпала с чеком до рубля. Нашли ещё подтекающий сальник — позвонили, спросили, показали фото. Не стали молча делать и выставлять счёт. Для меня это и есть доверие.</blockquote>
+          <figcaption class="review__author">
+            <span class="review__ava" aria-hidden="true">АМ</span>
+            <span><span class="review__name">Анна М.</span><br><span class="review__car">Kia Sportage · 2019</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="review__quote">Пригнал после лобового с деформацией лонжерона. Честно предупредили, что геометрия займёт дольше срока и объяснили почему. Сделали за 11 дней, зазоры ровные, краска в цвет — переходов не видно даже на солнце.</blockquote>
+          <figcaption class="review__author">
+            <span class="review__ava" aria-hidden="true">СП</span>
+            <span><span class="review__name">Сергей П.</span><br><span class="review__car">Toyota Camry · 2021</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== CTA + ФОРМА -->
+  <section class="section" aria-labelledby="cta-h">
+    <div class="shell">
+      <div class="cta" data-reveal="up">
+        <div>
+          <p class="mono" style="margin-bottom:1.4rem">05 — Заявка</p>
+          <h2 class="cta__title" id="cta-h">Начните<br>с диагноза</h2>
+          <p class="cta__text">Оставьте номер — перезвоним в течение 15 минут в рабочее время, зададим несколько вопросов и назовём вилку по вашей проблеме ещё до заезда.</p>
+          <ul class="cta__list">
+            <li>Консультация и смета — бесплатно</li>
+            <li>Диагностика зачитывается в счёт ремонта</li>
+            <li>Подменный автомобиль на время кузовных работ</li>
+          </ul>
+          <div style="margin-top:2.5rem">
+            <a class="btn-round" href="tel:+74951234567" data-magnetic="0.4" data-cursor="Звонок">
+              Позвонить<br>сейчас
+            </a>
+          </div>
+        </div>
+
+        <form class="form" data-form novalidate>
+          <div class="field">
+            <label for="h-name">Как к вам обращаться</label>
+            <input id="h-name" name="name" type="text" required autocomplete="name">
+            <div class="field__error" aria-live="polite"></div>
+          </div>
+          <div class="field">
+            <label for="h-phone">Телефон</label>
+            <input id="h-phone" name="phone" type="tel" required autocomplete="tel">
+            <div class="field__error" aria-live="polite"></div>
+          </div>
+          <div class="field is-filled">
+            <label for="h-svc">Что беспокоит</label>
+            <select id="h-svc" name="service" required>
+              <option value="diag">Не понимаю причину — нужна диагностика</option>
+              <option value="engine">Двигатель</option>
+              <option value="akpp">АКПП / вариатор</option>
+              <option value="chassis">Ходовая и тормоза</option>
+              <option value="electro">Электрика</option>
+              <option value="body">Кузов и покраска</option>
+              <option value="to">Плановое ТО</option>
+            </select>
+            <div class="field__error" aria-live="polite"></div>
+          </div>
+          <div class="field">
+            <label for="h-car">Марка, модель, год</label>
+            <input id="h-car" name="car" type="text" autocomplete="off">
+            <div class="field__error" aria-live="polite"></div>
+          </div>
+
+          <label class="form__agree">
+            <input type="checkbox" required>
+            <span>Согласен на обработку персональных данных и с <a href="#" onclick="return false">политикой конфиденциальности</a></span>
+          </label>
+
+          <button class="btn btn--lg" type="submit" data-magnetic="0.25" data-cursor="Отправить">
+            Записаться на диагностику<span class="btn__arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <div class="form__success">
+            <div>
+              <div class="check-ring"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></div>
+              <h3>Заявка принята</h3>
+              <p>Мастер-приёмщик перезвонит в течение 15 минут. Если сейчас нерабочее время — утром, с 9:00.</p>
+              <button class="btn btn--ghost" type="button" data-form-reset style="margin-top:1.6rem">Отправить ещё одну</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="js/chrome.js"></script>
+<script defer src="js/app.js"></script>
+<script type="module" src="js/hero3d.js"></script>
+</body>
+</html>
