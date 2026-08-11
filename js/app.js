@@ -9,7 +9,13 @@
   var COARSE  = window.matchMedia('(hover: none), (pointer: coarse)').matches;
   var hasGSAP = typeof window.gsap !== 'undefined';
 
-  if (hasGSAP && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+  if (hasGSAP && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    // limitCallbacks — колбэки не дёргаются повторно у границ триггера;
+    // syncInterval подрезает частоту проверок скролла (gsap-scrolltrigger,
+    // раздел Performance). На странице с десятками триггеров это заметно.
+    ScrollTrigger.config({ limitCallbacks: true, syncInterval: 40 });
+  }
 
   /* ------------------------------------------------------------ 1. LENIS */
   var lenis = null;

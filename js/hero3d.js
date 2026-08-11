@@ -72,6 +72,9 @@ function init() {
   // HDRI-подобное окружение без внешних файлов — отражения «как в цеху»
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  // Карта окружения уже запечена — генератор больше не нужен и держит
+  // render target впустую (threejs-webgl: dispose resources).
+  pmrem.dispose();
 
   /* ------------------------------------------------------- Materials */
   const matRotor = new THREE.MeshStandardMaterial({
@@ -88,6 +91,12 @@ function init() {
     emissive: 0xff4d0f, emissiveIntensity: 0.22
   });
   const matBolt = new THREE.MeshStandardMaterial({ color: 0xe4e8ec, metalness: 1.0, roughness: 0.22 });
+
+  // Общие материалы для «пустот» диска. Раньше создавались внутри циклов —
+  // 3 материала на кольца перфорации и ещё 8 на насечки; каждый тянул за собой
+  // отдельную компиляцию шейдера (threejs-webgl: geometry/material reuse).
+  const matVoid = new THREE.MeshBasicMaterial({ color: 0x05060a });
+  const matSlot = new THREE.MeshBasicMaterial({ color: 0x0a0c10 });
 
   /* ------------------------------------------------------ Build parts */
   const root = new THREE.Group();
@@ -106,7 +115,7 @@ function init() {
   // Перфорация: кольца сквозных отверстий (тёмные цилиндры «в толще» диска)
   const holeGeo = new THREE.CylinderGeometry(0.11, 0.11, 0.22, 14);
   [{ r: 1.45, n: 16, o: 0 }, { r: 1.85, n: 20, o: 0.16 }, { r: 2.25, n: 24, o: 0.32 }].forEach(ring => {
-    const inst = new THREE.InstancedMesh(holeGeo, new THREE.MeshBasicMaterial({ color: 0x05060a }), ring.n);
+    const inst = new THREE.InstancedMesh(holeGeo, matVoid, ring.n);
     const dummy = new THREE.Object3D();
     for (let i = 0; i < ring.n; i++) {
       const a = (i / ring.n) * Math.PI * 2 + ring.o;
@@ -120,7 +129,7 @@ function init() {
   // Насечки-канавки на поверхности диска
   const slotGeo = new THREE.BoxGeometry(0.055, 0.2, 0.95);
   for (let i = 0; i < 8; i++) {
-    const slot = new THREE.Mesh(slotGeo, new THREE.MeshBasicMaterial({ color: 0x0a0c10 }));
+    const slot = new THREE.Mesh(slotGeo, matSlot);
     const a = (i / 8) * Math.PI * 2;
     slot.position.set(Math.cos(a) * 2.0, 0, Math.sin(a) * 2.0);
     slot.rotation.y = -a + Math.PI / 2;
