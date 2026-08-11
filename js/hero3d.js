@@ -18,16 +18,40 @@ function webglOK() {
 }
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const SMALL   = window.matchMedia('(max-width: 768px)').matches;
 const LOW_CPU = (navigator.hardwareConcurrency || 8) <= 4;
+const smallMQ = window.matchMedia('(max-width: 768px)');
 
-if (!mount || !webglOK() || SMALL || REDUCED || LOW_CPU) {
-  // Статичный фолбэк — CSS-диск уже в разметке, просто показываем его.
-  if (mount) mount.remove();
-  if (fallback) fallback.style.display = 'grid';
-} else {
-  if (fallback) fallback.style.display = 'none';
-  init();
+// Ширина — единственное условие, которое меняется во время жизни страницы,
+// поэтому решение пересматриваем на ресайзе. Контейнер не удаляем: иначе
+// окно, открытое узким, навсегда лишало бы hero 3D-объекта.
+let started = false;
+
+function decide() {
+  const ok = mount && webglOK() && !smallMQ.matches && !REDUCED && !LOW_CPU;
+
+  if (ok && !started) {
+    started = true;
+    if (fallback) fallback.style.display = 'none';
+    mount.style.display = '';
+    init();
+    return;
+  }
+  // Сцену, которая уже крутится, при сужении окна не сносим — renderer сам
+  // подстроится под размер, а повторная инициализация дороже, чем ресайз.
+  if (!started) {
+    if (mount) mount.style.display = 'none';
+    if (fallback) fallback.style.display = 'grid';
+  }
+}
+
+decide();
+
+if (mount && !started) {
+  let t = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(t);
+    t = setTimeout(decide, 250);
+  });
 }
 
 /* -------------------------------------------------------------- Scene */
